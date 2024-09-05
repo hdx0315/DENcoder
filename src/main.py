@@ -98,3 +98,85 @@ def update_history():
     history_panel.delete(1.0, END)
     history_panel.insert(INSERT, history_text)
     history_panel.config(state=DISABLED)
+
+
+###########################################################################################3
+##### GUI #####
+
+# Set up the GUI window
+root.geometry('850x550')
+root.title("DENcoder - Decoder & Encoder")
+
+
+# Frame for input and buttons
+input_frame = Frame(root, width=500)
+input_frame.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
+input_frame.pack_propagate(False)  # Prevent frame from resizing beyond set width
+
+# Frame for history
+history_frame = Frame(root, width=350, bg='lightgrey')
+history_frame.pack(side=RIGHT, fill=BOTH, expand=True, padx=10, pady=10)
+history_frame.pack_propagate(False)
+
+
+
+# Elements in the input frame
+
+# Main title
+Label(input_frame, text='DENcoder', font='arial 20 bold').pack(pady=10)
+
+# Input fields
+# Message
+Label(input_frame, font='arial 12 bold', text='MESSAGE').pack(anchor=W, padx=10, pady=5)
+Entry(input_frame, font='arial 10', textvariable=message_var, bg='ghost white').pack(fill=X, padx=20)
+Label(input_frame).pack(pady=3) 
+
+
+# Private Key
+Label(input_frame, font='arial 12 bold', text='KEY').pack(anchor=W, padx=10, pady=5)
+Entry(input_frame, font='arial 10', textvariable=private_key, bg='ghost white').pack(fill=X, padx=20)
+Label(input_frame).pack(pady=3) 
+
+ 
+# Mode
+Label(input_frame, font='arial 12 bold', text='MODE').pack(anchor=W, padx=10, pady=5)
+# Dropdown Menu
+OptionMenu(input_frame, mode, "Encode", "Decode").pack(fill=X, padx=20)
+Label(input_frame).pack(pady=3) 
+
+ 
+# Result Output Panel
+Entry(input_frame, font='arial 10 bold', textvariable=result_var, bg='ghost white', state='readonly').pack(fill=X, padx=20, pady=10)
+
+
+# Result button
+Button(input_frame, font='arial 10 bold', text='RESULT', padx=10, bg='LightGray', command=Mode).pack(pady=5)
+
+
+# Reset and Exit buttons
+Button(input_frame, font='arial 10 bold', text='RESET', width=10, command=Reset, bg='LimeGreen').pack(side=LEFT, padx=35, pady=5)
+Button(input_frame, font='arial 10 bold', text='EXIT', width=10, command=Exit, bg='OrangeRed').pack(side=RIGHT, padx=35, pady=5)
+
+
+# Bottom label
+Label(input_frame, text='--hdx0315--', font='arial 8').pack(side=BOTTOM)  
+
+
+
+# History panel on the right side
+
+# Top Title
+history_title = Label(history_frame, text='History', font='arial 12 bold', bg='lightgrey')
+history_title.pack(pady=10)
+
+# Area to display history
+history_panel = Text(history_frame, font='arial 10', bg='white', wrap=WORD, state=DISABLED)
+history_panel.pack(expand=True, fill=BOTH, padx=10, pady=10)
+
+
+# Update history panel initially
+update_history()
+
+
+# Start the main loop
+root.mainloop()
