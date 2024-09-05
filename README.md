@@ -1,4 +1,6 @@
-# DENcoder - Decoder & Encoder
+# DENcoder ![Static Badge](https://img.shields.io/badge/DENcoder-v1-%230f0?logo=python&logoColor=%230f0) ![Static Badge](https://img.shields.io/badge/HirushaDinujaya-hdx0315-%236fffe9?logo=hexo&logoColor=%236fffe9&labelColor=%23000)
+## The Decoder & Encoder
+
 
 DENcoder is a simple desktop application that allows you to encode and decode messages using a user-provided or automatically generated private key. It is built using Python and Tkinter for the GUI.
 
@@ -44,10 +46,13 @@ python main.py
 
 ### How to Use
 - Enter a Message: In the "MESSAGE" field, input the message you want to encode or decode.
+![Screenshot of GUI.](https://github.com/hdx0315/DENcoder/blob/main/images/ss1.jpg)
 - Enter/Generate a Key: You can provide your own key or use the randomly generated key. The key is essential for both encoding and decoding the message.
 - Select Mode: Choose whether to Encode or Decode from the drop-down.
 - Click "RESULT": The encoded/decoded result will be shown in the result field.
-Check History: A history of the last 10 encoding/decoding operations is displayed in the history panel.
+![Screenshot of a Message encode.](https://github.com/hdx0315/DENcoder/blob/main/images/ss2.jpg)
+![Screenshot of a Message decode.](https://github.com/hdx0315/DENcoder/blob/main/images/ss3.jpg)
+- Check History: A history of the last 10 encoding/decoding operations is displayed in the history panel.
 - RESET: Clears all fields and generates a new key.
 - EXIT: Closes the application.
 Screenshots
@@ -62,4 +67,6 @@ If you'd like to contribute to this project, feel free to fork the repository an
 - Push to the branch: git push origin my-feature-branch.
 - Open a pull request..
 
+![Static Badge](https://img.shields.io/badge/DENcoder-v1-%230f0?logo=python&logoColor=%230f0)
+![Static Badge](https://img.shields.io/badge/HirushaDinujaya-hdx0315-%236fffe9?logo=hexo&logoColor=%236fffe9&labelColor=%23000)
 
